@@ -15,6 +15,9 @@ class Adafruit_GFX : public Print {
  public:
 
   Adafruit_GFX(int16_t w, int16_t h); // Constructor
+  virtual ~Adafruit_GFX(){
+
+  }
 
   // This MUST be defined by the subclass:
   virtual void drawPixel(int16_t x, int16_t y, uint16_t color) = 0;
@@ -134,7 +137,7 @@ class GFXcanvas1 : public Adafruit_GFX {
 
  public:
   GFXcanvas1(uint16_t w, uint16_t h);
-  ~GFXcanvas1(void);
+  virtual ~GFXcanvas1(void);
   void     drawPixel(int16_t x, int16_t y, uint16_t color),
            fillScreen(uint16_t color);
   uint8_t *getBuffer(void);
